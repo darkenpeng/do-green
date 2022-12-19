@@ -1,19 +1,19 @@
 ## card schema -> category schema 변경 ( 기존 category schema는 삭제 )
 
 1. category schema structure
-
+```
 categoryNmae : ex)News, Food, LifeStyle ...etc
 MascotName : ex) Penguin, Lion, Tiger, rabbit ...etc 
 MascotImage : imgURL
 posts : ref "post schema"
-
+```
 2. post schema structure
-
+```
 category : ref "category schema"
 content : contents text
 like : ref "like schema"
 comment : ref "comment schema"
-
+```
 > categoryName, mascotName은 프론트에서 표현 할 때는 펭귄의 뉴스, 사자의 음식 처럼 1:1 대응( 백도 그렇게 대응시켜야 할듯) 
 >> 모든 카테고리의 글은 1명의 admin만 관리
 
