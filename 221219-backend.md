@@ -11,8 +11,10 @@ posts : ref "post schema"
 ```
 category : ref "category schema"
 content : contents text
+imageList : [...images] 
 like : ref "like schema"
 comment : ref "comment schema"
+
 ```
 > categoryName, mascotName은 프론트에서 표현 할 때는 펭귄의 뉴스, 사자의 음식 처럼 1:1 대응( 백도 그렇게 대응시켜야 할듯) 
 >> 모든 카테고리의 글은 1명의 admin만 관리
