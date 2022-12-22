@@ -1,0 +1,1147 @@
+openapi: 3.0.0
+info:
+  title: green(temp)
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: auth
+    description: |-
+      `description` 회원가입과 로그인을 담당합니다.
+
+      ### user 계정
+
+      ``` json
+      {
+          "email": "lion4@kakao.com",
+          "password": "password!"
+      }
+
+      ```
+
+      `기능명세`  
+      **user가 회원가입 할 수 있습니다.**  
+      **user가 회원가입한 email과 password로 로그인 할 수 있습니다.**  
+      **admin은 client에서 회원가입할 수 없습니다.**  
+      **admin이 email과 password로 로그인 할 수 있습니다.**
+
+      admin이 ban한 user는 회원가입을 3개월 간 할 수 없습니다.
+
+      admin이 ban한 user는 로그인을 3개월 간 할 수 없습니다.
+
+      \`추가기능\`
+
+      회원가입 시 유저이름, 이메일 중복확인이 가능합니다.
+  - name: admin
+    description: |-
+      `description` 관리자와 관련된 기능을 담당합니다.
+
+      ### **admin 계정**
+
+      ``` json
+      {
+          "email": "admin@gmail.com",
+          "password": "password!"
+      }
+
+      ```
+
+      `기능명세`  
+      **admin은 admin을 제외한 모든 user를 조회합니다.**  
+      **admin은 user를 비활성화시킬 수 있습니다.**  
+      **admin은 user를 활성화시킬 수 있습니다.**  
+      **admin은 활성화 상태인 유저를 조회할 수 있습니다.**  
+      **admin은 활성화 상태인 유저를 조회할 수 있습니다.**
+  - name: user
+    description: "`description` user에 대한 기능을 담당합니다.\n\n### user 계정\n\nJSON\n\n``` json\n{\n  \"email\": \"lion4@kakao.com\",\n  \"password\": \"password!\"\n}\n\n```\n\n`기능명세`\n\n> **user\b가 자신의 정보를 조회할 수 있습니다.**  \n> **user가 자신의 정보를 수정할 수 있습니다.**  \n> 이 때 기존 패스워드가 필요합니다. 변경할 수 있는 정보는 username(하지만 유일해야 합니다), bio, imgUrl입니다. 그리고 셋 중 하나만 넣더라도 변경됩니다.  \n> 또한 유저가 패스워드를 변경할 때도 이 요청으로 처리합니다.>  \n> **유저가 탈퇴할 수 있습니다.**\n\n> **회원탈퇴한 유저는 자신의 정보를 조회할 수 없습니다.**  \n> **회원탈퇴한 유저는 자신의 정보를 수정할 수 없습니다.**  \n> admin이 정지시킨 유저가 회원탈퇴할 수 없습니다.\n> \n>   \n> admin이 자신의 정보를 조회할 수 있습니다.\n\n> **admin이 회원탈퇴 할 수 있습니다.**"
+  - name: post
+  - name: category
+paths:
+  /auth/register:
+    post:
+      tags:
+        - auth
+      summary: admin의 회원가입
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: test@home.com
+                password: password!
+                username: registerTest
+                role: USER
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '210'
+            ETag:
+              schema:
+                type: string
+                example: W/"d2-7Q4VzPtmuJc5axsYzwWVPI04mMQ"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 13:33:40 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example: >-
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2MzlkNjhkM2VmNWI0Zjk4MzljZWNiZWIiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3MTI4NDAyMH0.tXo0sRM3U_vcRxw7Mhjg_krYCm2upOnbQY45fhF-I9M
+  /auth/login:
+    post:
+      tags:
+        - auth
+      summary: admin의 로그인
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: admin@gmail.com
+                password: passsword!
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '210'
+            ETag:
+              schema:
+                type: string
+                example: W/"d2-7Q4VzPtmuJc5axsYzwWVPI04mMQ"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 13:33:40 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example: >-
+                eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoSWQiOiI2MzlkNjhkM2VmNWI0Zjk4MzljZWNiZWIiLCJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY3MTI4NDAyMH0.tXo0sRM3U_vcRxw7Mhjg_krYCm2upOnbQY45fhF-I9M
+        '400':
+          description: Bad Request
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '54'
+            ETag:
+              schema:
+                type: string
+                example: W/"36-3mNTYIBonrVzBZG0JKP0mEeZuV8"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:58:11 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: admin의 로그인(패스워드 불일치)
+                  value:
+                    error: 패스워드가 일치하지 않습니다.
+                example-1:
+                  summary: admin의 로그인(가입하지 않은 이메일)
+                  value:
+                    error: admin1@gmail.com은 가입 내역이 없습니다.
+  /auth/exists:
+    get:
+      tags:
+        - auth
+      summary: 회원가입 시 이메일, 유저네임 중복확인
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '15'
+            ETag:
+              schema:
+                type: string
+                example: W/"f-j+psvJ5GTTE892Ow+by8mAfvwMU"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 08:40:22 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              examples:
+                example-0:
+                  summary: 회원가입 시 이메일 중복확인
+                  value:
+                    email: false
+                example-1:
+                  summary: 회원가입 시 유저네임 중복확인
+                  value:
+                    username: true
+  /admin/:
+    get:
+      tags:
+        - admin
+      summary: admin의 모든 유저 조회
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '259'
+            ETag:
+              schema:
+                type: string
+                example: W/"103-nVFR/WSNL4ycCgHhGt0Fszd9rDU"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 07:00:20 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - role: USER
+                  email: lion3@kakao.com
+                  username: 라이언
+                - role: USER
+                  email: lion4@kakao.com
+                  username: 라이1언
+                - role: USER
+                  email: admin@kakao.com
+                  username: 관리자
+                - role: ADMIN
+                  email: admin@gmail.com
+                  username: admin
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '52'
+            ETag:
+              schema:
+                type: string
+                example: W/"34-3DMteYF4qaF6yKD+AdCz6BXr6rA"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:47:38 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 관리자만 이용할 수 있습니다.
+        '500':
+          description: Internal Server Error
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '25'
+            ETag:
+              schema:
+                type: string
+                example: W/"19-8fHk7RfMh0VEu5rtU+XFD/e40hs"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:46:44 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: jwt malformed
+  /admin/inactive:
+    get:
+      tags:
+        - admin
+      summary: admin의 비활성화된 user 조회
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '66'
+            ETag:
+              schema:
+                type: string
+                example: W/"42-kaMXXRgesEXCFiPxBoRcIvZV1sU"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 07:59:29 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - role: USER
+                  email: admin@kakao.com
+                  username: 관리자
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '52'
+            ETag:
+              schema:
+                type: string
+                example: W/"34-3DMteYF4qaF6yKD+AdCz6BXr6rA"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:48:06 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 관리자만 이용할 수 있습니다.
+  /admin/ban:
+    patch:
+      tags:
+        - admin
+      summary: admin의 user 계정 비활성화
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                - 관리자
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 07:29:19 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '52'
+            ETag:
+              schema:
+                type: string
+                example: W/"34-3DMteYF4qaF6yKD+AdCz6BXr6rA"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:48:19 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 관리자만 이용할 수 있습니다.
+  /admin/cancel:
+    patch:
+      tags:
+        - admin
+      summary: admin의 user 계정 활성화
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                - 관리자
+                - 라이1언
+                - 라이언
+                - admin
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 07:50:49 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '52'
+            ETag:
+              schema:
+                type: string
+                example: W/"34-3DMteYF4qaF6yKD+AdCz6BXr6rA"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:48:31 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 관리자만 이용할 수 있습니다.
+  /admin/active:
+    get:
+      tags:
+        - admin
+      summary: admin의 활성화된 user 조회
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '259'
+            ETag:
+              schema:
+                type: string
+                example: W/"103-nVFR/WSNL4ycCgHhGt0Fszd9rDU"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 07:59:15 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                - role: USER
+                  email: lion3@kakao.com
+                  username: 라이언
+                - role: USER
+                  email: lion4@kakao.com
+                  username: 라이1언
+                - role: USER
+                  email: admin@kakao.com
+                  username: 관리자
+                - role: ADMIN
+                  email: admin@gmail.com
+                  username: admin
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '52'
+            ETag:
+              schema:
+                type: string
+                example: W/"34-3DMteYF4qaF6yKD+AdCz6BXr6rA"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:48:45 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 관리자만 이용할 수 있습니다.
+  /user/me:
+    get:
+      tags:
+        - user
+      summary: user가 자신의 정보를 조회
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '195'
+            ETag:
+              schema:
+                type: string
+                example: W/"c3-UTQ4hIIjg2JvlZz7kPflLWoJSAw"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 13:26:27 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                role: USER
+                email: lion3@kakao.com
+                username: 라이언
+                bio: Hi there!
+                imgUrl: >-
+                  https://user-images.githubusercontent.com/91370858/208048148-47028f2f-d283-4ab1-a43e-3c073543161e.png
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '62'
+            ETag:
+              schema:
+                type: string
+                example: W/"3e-wqbwzPtOiqqyNww3fKzqs70HTGc"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:51:35 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 활성화된 유저만 사용할 수 있습니다.
+    patch:
+      tags:
+        - user
+      summary: user가 자신의 정보를 수정
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                oldPassword: password!
+                bio: Hi hello!
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 13:31:18 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '62'
+            ETag:
+              schema:
+                type: string
+                example: W/"3e-wqbwzPtOiqqyNww3fKzqs70HTGc"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:51:57 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 활성화된 유저만 사용할 수 있습니다.
+  /user/me/withdraw:
+    patch:
+      tags:
+        - user
+      summary: user가 회원탈퇴
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: OK
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Date:
+              schema:
+                type: string
+                example: Sat, 17 Dec 2022 13:32:22 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+            Transfer-Encoding:
+              schema:
+                type: string
+                example: chunked
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: null
+        '403':
+          description: Forbidden
+          headers:
+            X-Powered-By:
+              schema:
+                type: string
+                example: Express
+            Content-Type:
+              schema:
+                type: string
+                example: application/json; charset=utf-8
+            Content-Length:
+              schema:
+                type: integer
+                example: '62'
+            ETag:
+              schema:
+                type: string
+                example: W/"3e-wqbwzPtOiqqyNww3fKzqs70HTGc"
+            Vary:
+              schema:
+                type: string
+                example: Accept-Encoding
+            Date:
+              schema:
+                type: string
+                example: Wed, 21 Dec 2022 09:52:16 GMT
+            Connection:
+              schema:
+                type: string
+                example: keep-alive
+            Keep-Alive:
+              schema:
+                type: string
+                example: timeout=5
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                error: 활성화된 유저만 사용할 수 있습니다.
+  /post/create:
+    post:
+      tags:
+        - post
+      summary: post 생성
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                category: 뉴스
+                content: 날씨가 매우 추워 도로가 얼어붙었습니다.
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /post/63a259b780ddd6addb59a3b8:
+    patch:
+      tags:
+        - post
+      summary: post 수정
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                content: 오옹!!!!!!!!!!!!!!!
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /post/63a26fc1ead75d7fcef63565:
+    delete:
+      tags:
+        - post
+      summary: post 삭제
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /category/create:
+    post:
+      tags:
+        - category
+      summary: category 생성
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                categoryName: 뉴스
+                mascotName: 펭귄
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /category/63a0b429cb366102e341418d:
+    patch:
+      tags:
+        - category
+      summary: category 수정
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                categoryName: 라이프스타일
+                mascotName: 펭귄
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    delete:
+      tags:
+        - category
+      summary: category 삭제
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - category
+      summary: category 하나조회
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /category/:
+    get:
+      tags:
+        - category
+      summary: category 전체조회
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
