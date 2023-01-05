@@ -42,46 +42,27 @@ https://do-green.vercel.app
 ## 2. 기능 상세
 
 메인페이지
-- Autoplay Carousel
-- Infinite Autoplay Carousel
-- 페이지 최상단 이동 버튼 구현
-- 카테고리 목록 조회
-
+![main](https://user-images.githubusercontent.com/91370858/210854665-c1435853-bb4f-4280-b11d-7b0b50fe3192.gif)
 
 로그인
-- react-hook-form과 yup을 이용한 validation
-- 모달 창을 이용하여 페이지 이동없이 로그인 가능 
-- 로그인하는 경로에 따라, 로그인 이후의 경로 이동
-- 모달알람 창을 통하여 로그인 오류 및 로그아웃 확인
-
+![login](https://user-images.githubusercontent.com/91370858/210854751-b85a8c9c-06ae-4c12-b5aa-625159d6d760.gif)
 
 회원가입
-- react-hook-form과 yup을 이용한 validation
-- 동일한 이름과 이메일이 존재하는지 중복 확인
+![register](https://user-images.githubusercontent.com/91370858/210854810-add6e776-fadd-4b75-9202-d197babfc999.gif)
+
 
 내 정보 수정
-- react-hook-form과 yup을 이용한 validation
-- 현재 비밀번호를 필수로 입력한 뒤, 원하는 정보만 선택하여 수정 가능
-- 모달, 알람 창을 통하여 제출 확인 선택과 에러 상태 확인 가능
-- 모달을 통하여 페이지 이동없이 회원탈퇴 가능
+![mypage](https://user-images.githubusercontent.com/91370858/210854849-7564d075-c67e-41d5-a974-d4a98f173697.gif)
 
 카테고리 페이지
-- 카드 Hover Flip 애니메이션
-- 구독완료/취소 react toast 알림
-- 로그인/유저 여부에 따른 구독 상태변화
-- 모달, 알림창 공통 컴포넌트/훅 관리 
-- 카테고리 목록 조회
-- 구독하기, 구독 목록 조회
+![category](https://user-images.githubusercontent.com/91370858/210854876-585566c3-681b-4801-b042-ec72b86f9a26.gif)
 
 뉴스레터 페이지
-- react-hook-form과 yup을 이용한 validation
+![postpage](https://user-images.githubusercontent.com/91370858/210854915-fd90e680-2b0c-4879-9420-fe7cb90f883d.gif)
 
-마이페이지
-- Progress bar CSS 적용
-- React heatmap calender CSS 적용
-- 반응형 네비게이션바 구현
-- 유저 정보 조회, 수정, 삭제
-- 구독 목록 조회, 구독 취소
+내 구독정보 조회
+![mypagesub](https://user-images.githubusercontent.com/91370858/210854950-e55a444f-0e8a-4acf-96e6-addcaacf5652.gif)
+
 
 ## 3. ARCHITECTURE
 
