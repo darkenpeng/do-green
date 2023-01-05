@@ -2,8 +2,8 @@ import { Request, Response } from 'express';
 import { AuthService } from '../auth/auth.service';
 import { BadRequestError } from '../errors/BadRequestError';
 import { ForbiddenError } from '../errors/ForbiddenError';
-import invariant from '../invariant';
-import { zParse } from '../zParse';
+import invariant from '../utils/invariant';
+import { zParse } from '../utils/zParse';
 import { UserService } from './user.service';
 import { updateSchema } from './user.zodSchema';
 

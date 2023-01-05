@@ -2,7 +2,7 @@ import {
   Request, Response
 } from 'express';
 import { BadRequestError } from '../errors/BadRequestError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 
 export class ImageController {
   async post(req: Request, res: Response) {

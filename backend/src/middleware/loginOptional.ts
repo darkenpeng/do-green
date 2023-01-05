@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ForbiddenError } from '../errors/ForbiddenError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import { loginRequired } from './loginRequired';
 
 const loginOptional = (req: Request, res: Response, next: NextFunction) => {

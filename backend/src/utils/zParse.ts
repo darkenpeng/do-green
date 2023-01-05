@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import { AnyZodObject, ZodError, z } from 'zod';
-import { BadRequestError } from './errors/BadRequestError';
+import { BadRequestError } from '../errors/BadRequestError';
 
 export async function zParse<T extends AnyZodObject>(
   schema: T,

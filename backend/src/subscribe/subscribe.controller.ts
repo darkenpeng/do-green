@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { ForbiddenError } from '../errors/ForbiddenError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import { SubscribeService } from './subscribe.service';
 
 const subscribeService = new SubscribeService();

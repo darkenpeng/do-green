@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { loginRequired } from '../middleware/loginRequired';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 import { SubscribeController } from './subscribe.controller';
 
 const subscribeRouter = Router();

@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import { BadRequestError } from '../errors/BadRequestError';
 import { ForbiddenError } from '../errors/ForbiddenError';
-import invariant from '../invariant';
-import { PostService } from './postService';
+import invariant from '../utils/invariant';
+import { PostService } from './post.service';
 
 const postService = new PostService();
 

@@ -3,9 +3,9 @@ import ApplicationError from '../errors/ApplicationError';
 import { BadRequestError } from '../errors/BadRequestError';
 import { InternalServerError } from '../errors/InternalServerError';
 import { NotFoundError } from '../errors/NotFoundError';
-import invariant from '../invariant';
-import { PostSchema } from '../post/postSchema';
-import { CategorySchema } from './categorySchema';
+import invariant from '../utils/invariant';
+import { PostSchema } from '../post/post.schema';
+import { CategorySchema } from './category.schema';
 
 const PostModel = model<PostT>('posts', PostSchema);
 const CategoryModel = model<categoryT>('categories', CategorySchema);

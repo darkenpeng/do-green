@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 import { adminRequired } from '../middleware/adminRequired';
 import { loginRequired } from '../middleware/loginRequired';
 import { AdminController } from './admin.controller';

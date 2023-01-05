@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { UserService } from '../user/user.service';
-import { zParse } from '../zParse';
+import { zParse } from '../utils/zParse';
 import { AuthService } from './auth.service';
 import { registerSchema, loginSchema, isDuplicatedSchema } from './auth.zodSchema';
 

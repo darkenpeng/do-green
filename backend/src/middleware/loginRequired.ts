@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { AuthService } from '../auth/auth.service';
 import { ForbiddenError } from '../errors/ForbiddenError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 
 const authService = new AuthService();
 

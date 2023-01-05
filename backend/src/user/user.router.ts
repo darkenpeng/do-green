@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { loginRequired } from '../middleware/loginRequired';
 import { UserController } from './user.controller';
 import { activeRequired } from '../middleware/activeRequired';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 
 const userController = new UserController();
 const userRouter = Router();

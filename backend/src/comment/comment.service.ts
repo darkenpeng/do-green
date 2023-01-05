@@ -1,7 +1,7 @@
-import { PostRepository } from '../post/postRepository';
-import { CommentRepository } from './commentRepository';
+import { PostRepository } from '../post/post.repository';
+import { CommentRepository } from './comment.repository';
 import { NotFoundError } from '../errors/NotFoundError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import { ForbiddenError } from '../errors/ForbiddenError';
 
 const commentRepository = new CommentRepository();
@@ -14,7 +14,7 @@ export class CommentService {
   }
 
   async deleteComment(commentId: string, currentAuthId: string) {
-    // 양쪽이 강하게 결합되어 있어 분리가 반드시 필요합니다
+    // FIXME 양쪽이 강하게 결합되어 있어 분리가 반드시 필요합니다
     invariant(
       await commentRepository.isWrittenByCurrentUser(commentId, currentAuthId),
       new ForbiddenError('작성자가 아니므로 권한이 존재하지 않습니다.')

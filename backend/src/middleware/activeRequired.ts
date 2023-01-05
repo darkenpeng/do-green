@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { ForbiddenError } from '../errors/ForbiddenError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import { UserService } from '../user/user.service';
 
 const userService = new UserService();

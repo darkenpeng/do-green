@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 import { AuthController } from './auth.controller';
 
 const authRouter = Router();

@@ -1,6 +1,6 @@
-import { PostRepository } from './postRepository';
-import { CategoryRepository } from '../category/categoryRepository';
-import invariant from '../invariant';
+import { PostRepository } from './post.repository';
+import { CategoryRepository } from '../category/category.repository';
+import invariant from '../utils/invariant';
 import { NotFoundError } from '../errors/NotFoundError';
 import { ForbiddenError } from '../errors/ForbiddenError';
 

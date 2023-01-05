@@ -1,8 +1,8 @@
 import { model, Types } from 'mongoose';
-import { CategoryRepository } from '../category/categoryRepository';
-import { CategoryService } from '../category/categorySerivce';
+import { CategoryRepository } from '../category/category.repository';
+import { CategoryService } from '../category/category.serivce';
 import { BadRequestError } from '../errors/BadRequestError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import { UserService } from '../user/user.service';
 import { SubscribeSchema } from './subscribe.schema';
 

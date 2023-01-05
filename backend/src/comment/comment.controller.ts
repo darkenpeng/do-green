@@ -1,9 +1,9 @@
 import { z } from 'zod';
 import { Request, Response } from 'express';
 import { BadRequestError } from '../errors/BadRequestError';
-import invariant from '../invariant';
-import { CommentService } from './commentService';
-import { zParse } from '../zParse';
+import invariant from '../utils/invariant';
+import { CommentService } from './comment.service';
+import { zParse } from '../utils/zParse';
 import { ForbiddenError } from '../errors/ForbiddenError';
 
 const commentService = new CommentService();

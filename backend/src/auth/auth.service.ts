@@ -3,7 +3,7 @@ import { model } from 'mongoose';
 import * as argon2 from 'argon2';
 import jwt from 'jsonwebtoken';
 // 내부 공통 유틸리티
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import { ForbiddenError } from '../errors/ForbiddenError';
 import { InternalServerError } from '../errors/InternalServerError';
 import type { CurrentUser } from '../index';

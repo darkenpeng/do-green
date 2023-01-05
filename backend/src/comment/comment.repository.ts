@@ -1,7 +1,7 @@
 import { model, Types } from 'mongoose';
-import { CommentSchema } from './commentSchema';
-import { PostSchema } from '../post/postSchema';
-import invariant from '../invariant';
+import { CommentSchema } from './comment.schema';
+import { PostSchema } from '../post/post.schema';
+import invariant from '../utils/invariant';
 import { NotFoundError } from '../errors/NotFoundError';
 import ApplicationError from '../errors/ApplicationError';
 import { UserSchema } from '../user/user.schema';
@@ -12,12 +12,10 @@ const PostModel = model<PostT>('posts', PostSchema);
 const UserModel = model<UserT>('users', UserSchema);
 export class CommentRepository implements ICommentRepository {
   async paginationComment(postId: string, page: number, perPage: number) {
-    // eslint-disable-next-line max-len
     const post = await PostModel.findById(postId, undefined, {
       populate: {
         path: 'comments',
         options: {
-          // eslint-disable-next-line quote-props
           sort: { 'createdAt': -1 },
           skip: (page - 1) * perPage,
           limit: perPage

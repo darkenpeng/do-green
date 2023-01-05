@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { PostController } from './postController';
 import { adminRequired } from '../middleware/adminRequired';
 import { loginRequired } from '../middleware/loginRequired';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 import { loginOptional } from '../middleware/loginOptional';
 
 const postController = new PostController();

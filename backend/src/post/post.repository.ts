@@ -1,8 +1,8 @@
 import { model } from 'mongoose';
-import { CategorySchema } from '../category/categorySchema';
-import invariant from '../invariant';
-import { PostSchema } from './postSchema';
-import { CommentSchema } from '../comment/commentSchema';
+import { CategorySchema } from '../category/category.schema';
+import invariant from '../utils/invariant';
+import { PostSchema } from './post.schema';
+import { CommentSchema } from '../comment/comment.schema';
 import { UserSchema } from '../user/user.schema';
 import { NotFoundError } from '../errors/NotFoundError';
 

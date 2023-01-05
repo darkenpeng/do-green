@@ -2,7 +2,7 @@ import { model, mongo } from 'mongoose';
 import { AuthService } from '../auth/auth.service';
 import { BadRequestError } from '../errors/BadRequestError';
 import { ConflictError } from '../errors/ConflictError';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import { UserSchema } from './user.schema';
 
 const UserModel = model<UserT>('users', UserSchema);

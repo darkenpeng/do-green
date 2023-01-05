@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import upload from './upload.middleware';
 import { ImageController } from './image.controller';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 import { loginRequired } from '../middleware/loginRequired';
 
 const imageController = new ImageController();

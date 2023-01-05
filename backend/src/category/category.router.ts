@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { CategoryController } from './categoryController';
 import { adminRequired } from '../middleware/adminRequired';
 import { loginRequired } from '../middleware/loginRequired';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 
 const categoryController = new CategoryController();
 const categoryRouter = Router();

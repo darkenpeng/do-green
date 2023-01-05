@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { CommentController } from './commentController';
 import { loginRequired } from '../middleware/loginRequired';
-import { nextError } from '../nextError';
+import { nextError } from '../utils/nextError';
 
 const commentController = new CommentController();
 const commentRouter = Router();

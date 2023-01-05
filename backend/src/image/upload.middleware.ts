@@ -4,7 +4,7 @@ import { S3Client } from '@aws-sdk/client-s3';
 import type { AwsCredentialIdentity } from '@aws-sdk/types';
 import { Request } from 'express';
 import dotenv from 'dotenv';
-import invariant from '../invariant';
+import invariant from '../utils/invariant';
 import logger from '../logger';
 
 dotenv.config(); // 꼼수!
