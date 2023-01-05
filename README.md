@@ -5,10 +5,22 @@
 "환경 도메인 뉴스레터 구독 서비스"
 
 각 카테고리 별로 분류된 주제를 구독하여 뉴스레터를 볼 수 있고, 댓글과 좋아요로 상호작용 가능합니다. 
-## 배포 링크
+## 배포 링크(현재 이용 불가능합니다)
 https://do-green.vercel.app
 
 ## 1. TECH STACK
+
+### FRONTEND 
+
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> <img src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=React_Query&logoColor=white"> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
+
+<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
+
+- react-query와 zustand를 이용한 상태관리
+- 코멘트와 뉴스페이지에 Infinity scroll 구현
+- 좋아요에 optimistic update 적용
+- alert/confirm 등 재사용성 있는 dialog modal 구현
+- skeleton screen 적용
 
 ### BACKEND
 <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white">
@@ -26,17 +38,6 @@ https://do-green.vercel.app
 - Express의 request 타입을 확장하여 미들웨어에서 공유 가능한 context 생성
 - S3 bucket으로 이미지 파일 스토리지 분리
 
-### FRONTEND 
-
-<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> <img src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=React_Query&logoColor=white"> <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white">
-
-<img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"> <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
-
-- react-query와 zustand를 이용한 상태관리
-- 코멘트와 뉴스페이지에 Infinity scroll 구현
-- 좋아요에 optimistic update 적용
-- alert/confirm 등 재사용성 있는 dialog modal 구현
-- skeleton screen 적용
 
 ## 2. 기능 상세
 
@@ -97,6 +98,7 @@ https://do-green.vercel.app
 
 - [API 문서](https://documenter.getpostman.com/view/18622149/2s8YzXwfp4)
 
+
 ## 4. 프로젝트 팀원 역할 분담
 
 | 이름   | 포지션  | 담당업무                                                     |
@@ -110,13 +112,31 @@ https://do-green.vercel.app
 
 ## 5. 실행 방법
 
-- BE
-  ```
-  1. docker 실행
-  2. yarn dev
-  ```
-- FE
-  ```
-  1. npm i
-  2. npm run dev
-  ```
+### BE
+- root path
+
+```shell
+$ ./backend
+```
+- dependency
+```shell
+yarn install
+```
+
+- command
+```shell
+$ yarn dev 또는 yarn start
+```
+
+
+### FE
+- dependency
+```shell
+$ npm install
+```
+
+- command
+```shell
+$ npm run dev
+```
+
