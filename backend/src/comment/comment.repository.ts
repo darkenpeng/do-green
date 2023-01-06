@@ -3,13 +3,12 @@ import { CommentSchema } from './comment.schema';
 import { PostSchema } from '../post/post.schema';
 import invariant from '../utils/invariant';
 import { NotFoundError } from '../errors/NotFoundError';
-import ApplicationError from '../errors/ApplicationError';
 import { UserSchema } from '../user/user.schema';
-import { ForbiddenError } from '../errors/ForbiddenError';
 
 const CommentModel = model<CommentT>('comments', CommentSchema);
 const PostModel = model<PostT>('posts', PostSchema);
 const UserModel = model<UserT>('users', UserSchema);
+
 export class CommentRepository implements ICommentRepository {
   async paginationComment(postId: string, page: number, perPage: number) {
     const post = await PostModel.findById(postId, undefined, {
@@ -24,7 +23,7 @@ export class CommentRepository implements ICommentRepository {
     });
 
     invariant(post !== null, new NotFoundError('해당하는 포스트가 존재하지 않습니다.'));
-    invariant(post.comments !== undefined, new ApplicationError('해당하는 댓글이 존재하지 않습니다.', 404));
+    invariant(post.comments !== undefined, new NotFoundError('해당하는 댓글이 존재하지 않습니다.'));
 
     const total = await CommentModel.count({ refPost: postId });
     const totalPage = Math.ceil(total / perPage);
@@ -64,11 +63,11 @@ export class CommentRepository implements ICommentRepository {
     return targetComment.authId.toString() === currentAuthId;
   }
 
-  async deleteComment(commentId: string, currentAuthId: string) {
+  async deleteComment(commentId: string) {
     await CommentModel.findByIdAndDelete(commentId);
   }
 
-  async updateComment(commentId: string, toUpdate: updateCommentDto, currentAuthId: string) {
+  async updateComment(commentId: string, toUpdate: updateCommentDto) {
     await CommentModel.findByIdAndUpdate(commentId, { comment: toUpdate.comment });
   }
 

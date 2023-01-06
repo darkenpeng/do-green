@@ -20,7 +20,7 @@ export class CommentService {
       new ForbiddenError('작성자가 아니므로 권한이 존재하지 않습니다.')
     );
     await postRepository.deletePostCommentId(commentId, currentAuthId);
-    await commentRepository.deleteComment(commentId, currentAuthId);
+    await commentRepository.deleteComment(commentId);
   }
 
   async updateComment(comment: CommentT['comment'], commentId: string, currentAuthId: string) {
@@ -32,7 +32,7 @@ export class CommentService {
     const toUpdate = {
       ...(comment && { comment })
     };
-    await commentRepository.updateComment(commentId, toUpdate, currentAuthId);
+    await commentRepository.updateComment(commentId, toUpdate);
   }
 
   async createComment(comment: CommentT['comment'], postId: string, authId:string) {
