@@ -13,7 +13,6 @@ const activeRequired = (req: Request, res: Response, next: NextFunction) => {
       if (isDeleted) {
         throw new ForbiddenError('활성화된 유저만 사용할 수 있습니다.');
       }
-
       next();
     })
     .catch(e => {

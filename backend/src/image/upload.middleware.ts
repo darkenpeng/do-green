@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import invariant from '../utils/invariant';
 import logger from '../logger';
 
-dotenv.config(); // 꼼수!
+dotenv.config();
 
 type FileNameCallback = (error: Error | null, filename: string) => void;
 
