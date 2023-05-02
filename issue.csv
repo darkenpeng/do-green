@@ -1,0 +1,579 @@
+Issue ID,URL,Title,State,Description,Author,Author Username,Assignee,Assignee Username,Confidential,Locked,Due Date,Created At (UTC),Updated At (UTC),Closed At (UTC),Milestone,Weight,Labels,Time Estimate,Time Spent
+2,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/2,work flow 정하기,Closed,"`계획` : (예시 : 메인페이지 UI 구현)을 github project issue로 만듦
+
+`실행` : 이슈전환(convert to issue)
+
+`마무리` : [커밋 메시지와 issue 연동](https://www.lesstif.com/gitbook/github-push-pr-pull-request-issue-129008869.html) (예시 : close #2 를 커밋 메시지에 추가) 또는 MR과 issue 연동
+PR을 dev 브랜치에 날리기!
+
+이슈 close",서윤지,adeliepenguin,손 형석,SonHyeongSeok,No,No,,2022-12-12 07:23:57,2022-12-12 18:56:04,2022-12-12 18:56:04,,,BE,0,0
+3,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/3,boilerplate 협의하기,Closed,,서윤지,adeliepenguin,손 형석,SonHyeongSeok,Yes,No,,2022-12-12 07:32:04,2022-12-20 10:22:36,2022-12-12 18:56:28,,,BE,0,0
+4,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/4,개발환경구축,Closed,,서윤지,adeliepenguin,서윤지,adeliepenguin,Yes,No,2022-12-12,2022-12-12 07:37:43,2022-12-20 10:22:53,2022-12-12 07:43:57,,,BE,0,0
+5,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/5,221214 [BE] 오피스 아워 이슈 : merge request의 target branch에 dev를 선택할 수 없습니다,Closed,"'# gitlab에서 merge request의 target branch에 dev를 선택할 수 없습니다
+
+
+| 이슈 Label| 해당 사항 체크(✅,❎) |
+| ------ | ------ |
+| 프로젝트 진행 방향성에 관한 이슈 |  |
+| 데이터 관리의 어려움 |  |
+| 버그 |  |
+| 서버 이슈 |  |
+| 속도 이슈 |  |
+| gitlab 이슈 |✅|
+| 그 외 |  |
+
+- 설명 : `feat-BE-user-api`브랜치를 `dev`브랜치에 머지하려고 하는 상황입니다. gitlab에서 Merge Request를 생성하기 위해 source branch를 `feat-BE-user-api`로 설정하고, target branch에 `dev`브랜치로 설정되지 않습니다.(하단 캡쳐)
+
+## <gitlab 이슈>
+
+### 1. 개발 시 이슈가 무엇이었는지 예상 동작과 현재 동작에 대해 자세히 기입해주세요.
+local에서 git merge `feat-BE-user-api`&& git 명령어를 써서 merge를 하는 상황입니다.
+
+### 2. 이슈에 대한 원인을 기입해주세요.
+initialization 레포지토리를 fork 해올 당시 `master` 브랜치가 있었고, `main` 브랜치를 생성한 이후 `master`브랜치를 삭제했습니다..그리고 local에서 `master`를 삭제하고 `main` 브랜치에서 `dev`브랜치를 생성한 후 `feat-BE-user-api` 브랜치를 생성하였습니다. 
+
+### 3. 문제가 발생한 코드 및 스크린샷을 기입해주세요.
+![image](/uploads/864940b4625747d8e8c9a0da72d1deab/image.png)",서윤지,adeliepenguin,[코치] 유관식,ksyoo,No,No,,2022-12-14 08:11:33,2022-12-16 18:37:48,2022-12-14 08:18:34,,,"BE,🙋오피스아워",0,0
+6,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/6,221215 [FE] 오피스 아워 이슈 : 구현 우선 순위,Closed,"'## 개발 시 어려운 점을 아래 리스트 중에 체크해주세요.
+| 이슈 Label| 해당 사항 체크(✅,❎) |
+| ------ | ------ |
+| 프로젝트 진행 방향성에 관한 이슈 | ✅ |
+| 데이터 관리의 어려움 |  |
+| 버그 |  |
+| 서버 이슈 |  |
+| 속도 이슈 |  |
+| gitlab 이슈 |  |
+| 그 외 |  |
+
+- 이슈에 대한 자세한 설명 :
+뉴스레터와 챌린지 중에서 구현 우선 순위를 둔다면 무엇을 먼저 하기를 추천하시는지 조언 부탁드립니다.
+구현했을때 기술적으로 더 가치있는 기능과, 고도화할 요소가 많다고 보이는 기능이 무엇인지 궁금합니다.
+
+### 그 외 궁금한 점을 기입해주세요.
+
+1. localforage 사용 여부
+2. refresh token 사용 여부",Jisu Park,zih2o,[코치] 김혜진,yejinh,No,No,,2022-12-15 08:58:54,2022-12-15 14:03:00,2022-12-15 14:03:00,,,"FE,🙋오피스아워",0,0
+7,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/7,Layered Architecture,Closed,"'`context`
+
+221214 office hour 시간에 Layered Architecture에 대한 가이드를 주셨고 어떻게 구현해야 조금 더 나은 구조인지 고민하고 있습니다.
+
+`state`
+
+현재 user API는 router/controller/service+repository의 형태입니다.
+중점적으로 피드백 받고 싶은 부분은 다음과 같습니다.
+- service + repository가 합쳐져 있는 구조에 대한 trade-off(저는 mongoDB를 사용한다면 ORM과의 결합도가 높아져도 아직까진 괜찮지 않을까.. 싶어서 합쳤습니다..)
+- router를 분리해야 할 필요가 있을지(모듈마다 분리하는 것에 대해)
+- invariant 같은 유틸함수는 utils라는 함수를 만들고 거기에 넣는 게 맞을지(아직 유틸이 하나여서 안넣었습니다)
+
+**디렉토리 구조** (현재 사용하고 있지 않거나 파악하지 못한 파일은 제외하였습니다.)
+```terminal
+├── src
+│   ├── app.ts
+│   ├── auth
+│   │   ├── auth-controller.ts
+│   │   ├── auth-d.ts
+│   │   ├── auth-schema.ts
+│   │   └── auth-service.ts
+│   ├── index.d.ts // Express type을 확장해주는 역할
+│   ├── invariant.ts // 타입 가드를 해주는 유틸 함수
+│   ├── middleware
+│   │   ├── admin-required.ts
+│   │   ├── login-required.ts
+│   ├── routes.ts // swagger가 주입된 부분입니다
+│   ├── server.ts
+│   └── user
+│       ├── admin-controller.ts
+│       ├── user-controller.ts // router단에서 admin-required 미들웨어와 login-required 미들웨어를 한 번에 주입하기 위해 분리하였습니다
+│       ├── user-d.ts
+│       ├── user-schema.ts
+│       └── user-service.ts
+```
+
+`추가 질문`
+
+저희가 kebab case를 사용하고 있는데(이유없음 즉흥적으로 정함) 혹시 TypeScript+Express에서 주로 사용하는 역사와전통의(???) 컨벤션이 있나요?",서윤지,adeliepenguin,[코치] 유관식,ksyoo,Yes,No,,2022-12-16 07:10:11,2022-12-20 10:22:14,2022-12-16 12:13:51,,,"BE,🙋오피스아워",0,0
+8,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/8,DB connect시 주의사항에 대해 여쭤보려고 합니다!,Open,"기존 보일러플레이트 코드는 mongoDB URI(ex : mongodb://localhost:27017/apiname)을 통해 connect하는 형태로 되어 있습니다!
+
+따라서 저희의 MongoDB Atlas와 연결하기 위해서 해당 URI를 수정하면 될 것 같지만...
+
+mongoDB URI를 넣어둔 .env가 탈취당한다면 db 접근이 되는 구조이므로 `DB connection을 안전하게 하는 방법`에 대해 찾던 도중 proxy를 사용하거나 AWS IAM으로 인증을 걸어놓는 방법에 대해 알게 되었습니다
+
+`질문`
+1. 현업에서는 DB connection을 어떠한 방법으로 처리하는지
+2. 커넥션 풀이 어떻게 관리되는 지 궁금합니다!!(개념에 대해서도 간략히 설명해주시면 많은 도움을 얻을 수 있을 것 같습니다)",서윤지,adeliepenguin,[코치] 유관식,ksyoo,Yes,No,,2022-12-16 08:46:35,2022-12-20 10:16:49,,,,"BE,🙋오피스아워",0,0
+9,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/9,aws 배포 진행에 관해 질문이 있습니다! ㅠㅠ,Closed,"진행상황
+
+1. AWS 루트 계정 가입
+2. AWS IAM 계정 생성 및 분할
+3. EC2 ubuntu instance 생성
+4. PuTTY를 이용해 instance access
+5. node,npm,git install
+
+질문
+
+1. 사실 처음 배포하기도 하고 전체적인 프로세스가 맞게 진행 되고 있는지 궁금하고, 틀렸다면 어느부분을 보완해야할지 궁금합니다.
+2. 현재 instance 내에서 노드를 설치했는데 노드 버전이 12.22.9 버전으로 구버전인 것 같은데 괜찮은지 궁금합니다.
+3. 하나하나 삽질하면서 알아내는 중이긴한데, 이 시점에서 오피스아워 전까지 더 진행해나가겠지만 다음으로 필요한 작업이 뭔지 궁금합니다. ex) 도메인 입히기라던지, 포트번호숨기기(?)요런것들..
+4. 배포 후 관리를 어떤식으로 하는지
+
+엉어엉유ㅠ어어유ㅠㅠㅠ어엉어ㅠㅠㅠㅠ",손 형석,SonHyeongSeok,[코치] 유관식,ksyoo,No,No,,2022-12-16 08:54:55,2022-12-16 15:00:22,2022-12-16 15:00:22,,,"BE,🙋오피스아워",0,0
+10,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/10,user api 기능명세와 논의사항,Open,"'## user
+### `기능명세`
+
+**user가 자신의 정보를 조회할 수 있습니다.**
+
+**user가 자신의 정보를 수정할 수 있습니다.**
+
+> 이 때 기존 패스워드가 필요합니다. 변경할 수 있는 정보는 다음과 같습니다.
+> - username(하지만 유일해야 합니다),
+> - bio(회원가입 시 default 값으로 ""Hi, there!""이라는 문구가 삽입됩니다.),
+> - imgUrl(회원가입 시 default값으로 이미지 url이 삽입됩니다)
+> 
+> 그리고 요청을 보낼 때 모든 프로퍼티를 채우지 않아도 가능합니다.(optional)
+> 
+> 또한 유저가 패스워드를 변경할 때도 이 요청으로 처리합니다.
+
+**유저가 탈퇴할 수 있습니다.**
+
+### `앞으로 변경해야 하는 부분`
+
+
+회원탈퇴한 유저는 자신의 정보를 조회할 수 없습니다.(isDeleted가 false인 user만 요청을 보낼 수 있습니다.)
+
+회원탈퇴한 유저는 자신의 정보를 수정할 수 없습니다.(isDeleted가 false인 user만 요청을 보낼 수 있습니다.)
+
+db에서 created_At이 3개월 이상인 유저는 실제 db에서 삭제합니다.
+
+### `논의가 필요한 부분`
+admin이 정지시킨 유저가 회원탈퇴할 수 없습니다(?)(isDeleted가 false인 user만 요청을 보낼 수 있습니다.)
+
+admin이 회원탈퇴 할 수 있습니다(?)
+
+admin이 자신의 정보를 조회할 수 있습니다(?) -> 유저 정보와 동일하게 처리하면 되는지(?)
+
+admin이 자신의 정보를 변경할 수 있습니다.(유저와 동일하게 username, bio, imgUrl, 그리고 패스워드를 변경합니다. 또한 자신의 정보를 변경할 시 기존 비밀번호를 확인하는 로직이 유저와 동일합니다.
+
+
+
+---
+[POSTMAN DOCS](https://documenter.getpostman.com/view/18622149/2s8YzXwfp4)",서윤지,adeliepenguin,서윤지,adeliepenguin,Yes,No,2022-12-19,2022-12-17 16:57:18,2022-12-20 10:16:22,,,,"BE,FE",0,0
+11,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/11,auth api 기능명세 및 논의사항,Closed,"'### `기능명세`
+user가 회원가입 할 수 있습니다.
+
+user가 회원가입한 email과 password로 로그인 할 수 있습니다.
+
+admin은 client에서 회원가입할 수 없습니다.
+
+admin이 email과 password로 로그인 할 수 있습니다.
+
+### `논의가 필요한 부분`
+
+admin이 ban한 user는 회원가입을 3개월 간 할 수 없는지
+
+---
+cf) BE에서 발생한 문제\
+
+auth create와 user create를 transaction으로 묶어야 user create이 fail해도 auth도 함께 fail되어 해당 로직을 하나의 묶음으로 처리해야 함. DB 정합성이 깨짐을 dev 환경 DB에서 확인함.
+
+---
+
+[POSTMAN DOCS](https://documenter.getpostman.com/view/18622149/2s8YzXwfp4)",서윤지,adeliepenguin,서윤지,adeliepenguin,No,No,2022-12-19,2022-12-17 17:00:28,2022-12-19 14:22:50,2022-12-19 14:22:50,,,"BE,FE",0,0
+12,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/12,admin api 기능명세 및 논의사항,Closed,"'### `기능명세`
+- admin은 admin을 포함한 모든 user를 조회합니다.
+- admin은 user를 비활성화시킬 수 있습니다.
+- admin은 user를 활성화시킬 수 있습니다.
+- admin은 활성화 상태인 유저를 조회할 수 있습니다.
+- admin은 활성화 상태인 유저를 조회할 수 있습니다.
+
+### `변경되어야 하는 부분`
+- admin은 모든 유저를 조회할 때 admin을 제외하고 조회해야 합니다.
+(이유 : admin이 admin을 정지시키는 경우를 방지하기 위함)
+### `논의가 필요한 부분`
+admin은 하나의 계정인지(?)
+
+
+---
+
+[POSTMAN DOCS](https://documenter.getpostman.com/view/18622149/2s8YzXwfp4)",서윤지,adeliepenguin,서윤지,adeliepenguin,No,No,2022-12-19,2022-12-17 17:03:09,2022-12-19 14:22:19,2022-12-19 14:22:19,,,"BE,FE",0,0
+13,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/13,구독 기능에 관해 논의해볼 점,Open,"'## 구현할 기능 
+- post 조회 
+1. 카드 클릭 시 구독이 안된 상태면 post blind
+2. 구독이 된 카드면 post view
+
+## 논의하고 싶은 내용
+1. 구독 조회 기능을 구현하려면 구독여부를 판단하는 로직이 필요한 것 같은데,
+user에 `구독한 카드` 필드를 추가하고,
+card에 인덱스 번호를 부여해서 user에 `구독한 카드` 에 `인덱스 번호`가 있는지 체크한 뒤 true 면 해당 카드의 post 들을 보여주는 식으로 하는 것은 어떨까요?",손 형석,SonHyeongSeok,손 형석,SonHyeongSeok,No,No,,2022-12-17 18:18:56,2022-12-18 08:44:08,,,,BE,0,0
+14,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/14,"221215 [FE] 오피스 아워 이슈 : 코드, CSS, 프로젝트기획",Open,"'>**[Title(제목) 작성 형식]** <Br>
+-형식: [날짜] [포지션] 오피스 아워 이슈 : [이슈명]<Br>
+-예시: 220125 React 오피스 아워 이슈 : UI 구현의 어려움<Br>
+
+
+## 개발 시 어려운 점을 아래 리스트 중에 체크해주세요.
+| 이슈 Label| 해당 사항 체크(✅,❎) |
+| ------ | ------ |
+| 프로젝트 진행 방향성에 관한 이슈 | ✅ |
+| 데이터 관리의 어려움 |  |
+| 버그 |  |
+| 서버 이슈 |  |
+| 속도 이슈 |  |
+| gitlab 이슈 |  |
+| 그 외 |✅  |
+
+- 이슈에 대한 자세한 설명 :
+
+## <개발 이슈>
+
+### 1. 개발 시 이슈가 무엇이었는지 예상 동작과 현재 동작에 대해 자세히 기입해주세요.
+
+1) 1차 MR 코드리뷰를 반영하며, 회원가입, 로그인의 form, input, label 의 컴포넌트화를 진행하였고 제대로 작동하지만 타입오류가 생깁니다.<br/> 해당 내용은 MR코드리뷰에 동일하게 내용이 기입되어있습니다.
+
+
+2) 1주차 코드리뷰 공통피드백 4번 ‘스타일 코드로 인한 노이즈가 심해보입니다. 전체적인 ui를 살펴보고 공용으로 사용할 수 있는 스타일을 묶어서 쓸 수 있도록 해보세요.’ 관련 질문입니다.
+
+3) 프로젝트 진행 중, 카드 변경사항이 있습니다.
+<br/>기획 단계에서 수립된 방법은 데이터 계층간의 복잡성과 사용자가 받아들이기에 직관성이 부족함을 느껴 회의를 통해 변경하였습니다.
+    - 기획 : 동물과 토픽 중 원하는 것을 구독하여 뉴스레터를 받아보는 형식
+    - **변경**: **토픽을 카테고리화**를 시켜서 해당 카테고리들을 동물과 1:1 매칭시켜 디자인화함 
+<br />예시) 뉴스 데이터들을 펭귄과 매칭하여 프론트단에서 '뉴스 카테고리' === '펭귄이 전달해주는 뉴스' 
+위의 예시와 같이 표현하고자합니다.<br />
+
+   백엔드단에서는 복잡하게 동물과 토픽이들을 토픽 카테고리로 데이터를 분류하고 프론트단에서 토픽카테고리를 동물과 매칭시키는 방식입니다.
+<br /> 이 방향에 대해서 어떻게 생각하시는지 견해를 여쭙고싶습니다.
+
+### 2. 이슈에 대한 원인을 기입해주세요.
+
+1) typescript를 비롯해 react-hook-form 와 react의 이해도의 문제가 큰 것같습니다. <br/> 코드를 구동하면 작동하지만 이 코드가 제대로 작성이된것이 맞는지, 타입이 정확하게 명시된건지 의문점만 듭니다.
+<br/>또한 타입을 선언할대 ? 을 남발한 것 같습니다. 어떻게 고쳐야할지 잘 모르겠습니다.
+
+
+2) tailwind css 특성상 가독성이 떨어지는 문제는 인지하고 있습니다. 하지만 스타일을 공통으로 사용하고 있는 부분이 거의 존재하지 않아 어떻게 노이즈 문제를 해결할 수 있을지 감이 잘 오지 않습니다.  
+style관련 컴포넌트를 개별적으로 작성하기에는 컴포넌트가 너무 많아질거 같고 css 파일에 넣어주는 방법은 추천하지 않는다고 알고있는데 좋은 방법이 있을지 조언 부탁드립니다.  
+추가로 가독성을 위하여 컴포넌트를 잘게잘게 쪼개서 많이 만드는 것이 좋은 작업인지 궁금합니다.
+
+
+3)
+
+### 3. 문제가 발생한 코드 및 스크린샷을 기입해주세요.
+
+1) https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/merge_requests/23#note_104263
+<br/>해당 링크에 코드와 내용을 첨부하였습니다.
+2) 
+![Screen_Shot_2022-12-19_at_6.24.28_PM](/uploads/09bf32b25fc74f2dfff7dffb261ec813/Screen_Shot_2022-12-19_at_6.24.28_PM.png)
+
+### 4. 이슈를 어떻게 고칠 것인지 자세히 설명해주세요. (해결 방법을 못 찾을 시, 5. 궁금한 점에 기입해주세요)
+
+
+### 5. 그 외 궁금한 점을 기입해주세요.
+
+1.
+2.",지현 이,2J2h3n,"","",No,No,,2022-12-19 09:05:19,2022-12-19 09:38:31,,,,"FE,🙋오피스아워",0,0
+15,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/15,알림 기능의 구체화,Open,"'다음주 태스크인 알림 기능에 대한 구체화가 필요합니다.
+
+## 서로 알림 기능을 어떻게 생각하고 있는지? @1220 13:00 scrum meeting
+1. 브라우저에서 권한을 허용하면 실시간 알림이 오게 하는 방법(어플리케이션의 푸시알림)
+![image](/uploads/4004ce14cd76116e636a23b16d3c3d87/image.png)
+2. 트위터처럼 사용자가 접속했을 시 알림 탭에서 숫자가 더해지고, 내용이 일부 전송되는 방식
+![image](/uploads/c417b3a24dba05729c969a8f0d91a319/image.png)
+3. 메일로 알림을 보내는 방법
+
+## TODO
+- [ ] Socket.io에 대해 다음주 전까지 찾아보기로 함",서윤지,adeliepenguin,Jisu Park,zih2o,Yes,No,2022-12-26,2022-12-20 04:49:49,2022-12-20 10:16:12,,,,"BE,FE",0,0
+16,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/16,Express request type을 확장한 context에 대한 질문,Open,"'## `context`
+Express request type을 확장한 context가 모든 레이어에서 접근 가능하다면?
+- middleware 사이에서만 공유 가능한 context인 상태. service, db 등 다른 layer에서도 접근 가능한 context가 있으면 어떤 편리함이 있을지
+---
+
+프론트엔드에서의 전역상태처럼 공유되는 하나의 상태가 있어서 라우터 -> 미들웨어 -> 컨트롤러 -> 서비스 -> 레포지토리(현재 없음)로 이어지는 로직 흐름이 단순해질 것 같습니다.
+
+마침 오늘 추가한 기능인 isActiveUser에 대해서 예시를 들어서 설명해보자면, [커밋로그](https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/commit/87248a85f7c7ea807bfc92a40de1eec773e63ce6)
+
+isActiveUser는 회원탈퇴를 하거나 관리자가 block한 유저는 접근 권한이 없게 403 Forbidden에러를 던져주는 미들웨어입니다.
+current user에 대한 context가 라우터와 컨트롤러 사이에 있기 때문에 미들웨어에서 authService의 메서드를 호출하여 현재 유저가 active한지 boolean를 반환하는 함수를 구현해야 했습니다. [userService, loginRequired 미들웨어 커밋로그](https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/commit/d185982d2c85b4bee9ee91bd8eda1dc51acfb721)
+
+그런데 만약 전역상태(?)처럼 모든 레이어에서 접근 가능한 context가 있다면 서비스에서 context.currentUser 값을 가져올 수 있기 때문에 미들웨어에서 처리하는 것이 아닌 service단에서 해당 로직을 구현하므로 하나의 컨텍스트를 다른 레이어로 넘기는 과정이 사라져 상대적으로 간단해질 것 같습니다.
+하지만 프론트엔드의 전역 상태관리처럼 주의해야 할 점이 생길 것 같습니다. 과연 이 상태가 전역으로 관리되어야하는지에 대한 고민을 해보아야 할 것 같고 전역(모든 레이어)에서 필요하지 않은 상태를 불필요하게 들고 있는 상태를 유지하기 위한 비용(?)이 발생하지 않을까 추측합니다.(하지만 자세히는 모르겠어요)",서윤지,adeliepenguin,[코치] 유관식,ksyoo,Yes,No,,2022-12-20 08:46:43,2022-12-20 10:16:03,,,,"BE,🙋오피스아워",0,0
+17,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/17,공통 에러처리 모듈 구현에 대한 질문,Open,"'## `context`
+- error => status code 처리는 자연스러우나, status code => error 는 조금 어색하므로 자세한 설명이 필요함.
+
+---
+해당 기능은 커밋 로그를 참조하여 피드백을 해주시면 좋을 것 같아 공유드립니다.
+
+custom Error class 구현 [커밋로그](https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/commit/58184efb47d04d79a8f50e7b291792b3448c0973)
+
+error라는 디렉토리 안에 ApplicationError라는 클래스가 존재하고 그 클래스를 확장하여 각 status code에 맞는 에러처리 클래스를 구현하였습니다. 또한 그에 맞게 403, 401 같이 authentication/authorization 미들웨어에서 해당 에러를 던지게 리팩토링하였습니다.
+[리팩토링한 커밋내역 adminRequired](https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/commit/d32c60d358d57b16e64fc2b4e74461961f6a1a7d
+)
+
+**추가 질문이 있습니다.**
+
+nextError라는 함수를 만들었는데, 이 함수가 왜 필요한지 사실 잘 이해를 못하는 상황입니다. 이 함수는 지난 프로젝트 때 DB에 unique 옵션이 걸린 경우 클라이언트에서 요청에 (이미 DB에 존재하는)중복값을 포함하여 요청을 날렸을 때 DB가 에러를 뱉으며 서버가 죽는 것을 처리하기 위해 구현한 함수입니다.
+DB에서 에러를 뱉는 것의 에러처리가 repository layer에서 try-catch 해주는 것 이외의 방법으로 가능한가요? (그냥 단순히 제 취향이긴 하지만 저는 try-catch가 떡칠된 코드를 싫어합니다. . .)
+
+해당 커밋 내역: [nextError 구현](https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/commit/3b8df06f0b6d07b62dd54cf7a00367f197e6f41f)
+
+아 참고로 말씀드리자면 아직 validation해주는 미들웨어를 붙이지 않은 상태입니다!",서윤지,adeliepenguin,[코치] 유관식,ksyoo,Yes,No,,2022-12-20 09:04:01,2022-12-20 10:15:49,,,,"BE,🙋오피스아워",0,0
+18,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/18,all Query의 paging option 추가하기,Open,"'## `context`
+- paging 처리는 라이브러리 없이 구현하는 방향으로
+- 같은 언어의 이점을 활용하여, fe 쪽에서도 paging 처리를 쉽게 할 수 있는 모듈을 만들어서 제공하는 것을 고려하기
+
+---
+오늘 스크럼 미팅에서 관리자가 모든 유저를 조회하는 경우 pagination에 대해 어떤 방향으로 구현하고 싶은지 여쭤보았습니다. (올쿼리를 하는 것이 제 api에서만 이루어지지 않을 것 같아서입니다)
+공통의견은 다음과 같습니다. 관리자가 유저 정보를 조회하는 경우에는 pageNumber로 구현하는 방식이 좋은 것 같다고 하셨고, 유저가 구독한 카테고리의 post(뉴스레터)를 조회하는 경우에는 SNS처럼 인피니티 스크롤을 사용하는 방식이 사용자 경험 측면에서 좋을 것 같다고 하였습니다. 하지만 post의 경우 아직 api가 나오지 않은 상태이므로 내일까지 pagination에 대해 리서치 후 의견을 다시 나누기로 하였습니다.
+
+## `질문`
+- FE에서 페이징 처리를 쉽게 할 수 있는 공통 모듈의 의미를 제대로 이해하지 못해 자세히 설명을 듣고 싶습니다!
+- 이렇게 페이지네이션의 방향이 다른 상태인데 어떻게 공통 모듈로 추상화할 수 있을까요?
+
+현재 제가 깎고 있는 페이지네이션 처리는 우선 request를 validation하는 작업부터 처리하고 진행하려는 상태여서 pending입니다!",서윤지,adeliepenguin,[코치] 유관식,ksyoo,Yes,No,,2022-12-20 09:13:16,2022-12-20 10:15:38,,,,"BE,🙋오피스아워",0,0
+19,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/19,BE 손형석 진행상황,Closed,"'## 6시 이전에 이슈를 등록하지 않은 점 죄송합니다 ..ㅠ^ㅠ
+
+제가 오늘 집에 일이 있어서 오피스아워에 참여하지 못할 것 같습니다. 
+그래서 현재까지 진행 된 상황을 공유하고자 합니다.
+
+- 변경된 기획에 맞는 category APIs 구현, 테스트, docs 작성 완료
+- 변경된 기획에 맞는 post APIs 수정과 테스트를 겸하면서 진행중에 있습니다.
+
+## 개발 중 issue
+
+-TS 형식 에러로 인해 삽질을 많이 했는데, 아직 처리는 하지 못했고 일단 any로 변경해두고 테스트하고 있습니다.
+-해당 에러에서 발생하는 타입들을 categoryT에 주입해줘도 해당오류가 발생합니다ㅠ_ㅠ
+
+** 해당 에러 부분
+![image](/uploads/168b327e2181f7ecf1fd65a0b5905cd8/image.png)
+
+정의한 type과 인터페이스
+```
+type categoryT = {
+    id:Types.ObjectId,
+    categoryName: string,
+    mascotName: string,
+    mascotImage: string
+}
+////////
+interface IpostRepostiory {
+  createOne: (newPost: createPostDto, id:createPostDto['id']) => Promise<void>
+}
+```
+
+-몽구스에서 .find()를 하면 배열로 반환되는데, 이를 인지 못하고 계속 삽질하다가 .find({})로 변경하니 object로 잘 반환이 되더라구요..
+-TS 적응이 힘들어 에러를 많이 마주치고 있어서 조금 뎌딘데 이 또한 적응이라.. 생각하고 열심히 하고 있습니다.
+
+## 궁금한 점
+
+`post` 작성 시 로직에 관해 궁금한데, 제가 생각한 로직은
+```
+post에서 create 요청 -> 요청시 categoryname을 바디로 받아서 categoryRepository에서 해당 카테고리를 조회 -> 조회한 것에서 id값을 postRepository에 또 넣어주면서 create -> 또 category에 방금 create된 post의 id값을 넣어줌 (카테고리에 포스트를 불러오기 위한 id)
+```
+
+이건데.. 뭔가 되게 조잡한 것 같은데 이게 맞..나요..? 허허.. like와 comment까지 구현하게되면 서로 굉장히 얽히고 얽히게 될 것 같습니다..
+
+
+## 추후 진행 할 것
+
+- postAPI 완성
+- comment나 like API 만들기
+- AWS S3 고려하기
+- 요청에 의한 에러처리는 윤지님이 깎아주시고 계신데, 로직에서 나오는 에러에 대한 예외처리가 없어 전부 완성되면 처리하려고 합니다. 일단 깎는게 우선인 것 같아서..
+
+오피스아워 참여를 못해서 죄송합니다 열심히 하겠읍니다
+ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ어어유ㅓ어유ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ어엉어유ㅠㅠㅠㅠㅠㅠㅠㅠ어어유ㅠ유ㅓ엉어ㅠ유ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ",손 형석,SonHyeongSeok,[코치] 유관식,ksyoo,Yes,No,,2022-12-20 09:14:36,2022-12-21 06:19:32,2022-12-21 06:19:32,,,"BE,🙋오피스아워",0,0
+20,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/20,221222 FE 오피스아워,Closed,"'
+1. Interface 관리에 관해서 질문드립니다.
+ - 모든 interface에 대하여 .d.ts 파일을 만들어 관리하는 것과, api 관련된(백에 스키마가 존재하는) interface들만 중점적으로 관리하는 방법 중 어떤 것이 효율적인 방법이라고 생각하시는지 궁금합니다.
+
+2. test에 관해 질문드립니다.
+  - 현업에서 주로 쓰이는 테스트 기법과 툴(jest? testing-library?), 프론트엔드에서의 테스트 중요도에 대해 여쭙고 싶습니다.
+---
+
+#### 1. props.name 으로 받은 문자열로 object key에 접근하는 방법이 되지 않습니다.
+- props.name 으로 받은 문자열로 object key에 접근하는 방법이 되지 않습니다.
+  - name의 에러: 'string' 형식의 식을 'ICategories' 인덱스 형식에 사용할 수 없으므로 요소에 암시적으로 'any' 형식이 있습니다.
+'ICategories' 형식에서 'string' 형식의 매개 변수가 포함된 인덱스 시그니처를 찾을 수 없습니다.
+
+### 2. 이슈 원인
+- 타입지정이 문제인건지 ts특성상 되지않는건지 잘모르겠습니다..
+
+### 3. 문제가 발생한 코드 및 스크린샷
+
+```ts
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+interface ICategories {
+  admin: {
+    name: string;
+    url: string;
+  }[];
+  nav: {
+    name: string;
+    url: string;
+  }[];
+}
+
+interface InameType {
+  name: string;
+}
+interface IDataType extends InameType {
+  url: string;
+}
+
+//name은 ""admin"" || ""nav"" 값을 가짐
+export default function Categorys({ name }: InameType) {
+  const categoryDatas: ICategories = {
+    admin: [
+      { name: '동물카드 관리', url: '#' },
+      { name: '뉴스레터카드 관리', url: '#' },
+    ],
+    nav: [
+      { name: '마이페이지', url: '#' },
+      { name: '동물', url: '#' },
+      { name: '토픽', url: '#' },
+      { name: '로그아웃', url: '#' },
+    ],
+  };
+
+  //시도한 코드
+  const datas = categoryDatas[name];
+  const datas = categoryDatas.name;
+  const datas = categoryDatas.[name];
+
+  const keyName = name;
+  const datas = categoryDatas[keyName];
+
+  //해결한 코드
+  const datas = { ...categoryDatas }[name];
+
+  return (
+    <ul className=""flex flex-col"">
+      {datas?.map((data: IDataType) => {
+        return (
+          <Link to={data.url} key={data.name} className=""hover:underline"">
+            <li className=""text-l mt-5 md:text-xl font-bold"">{data.name}</li>
+          </Link>
+        );
+      })}
+    </ul>
+  );
+}
+```
+
+### 4. 이슈를 어떻게 고칠 것인지
+- 스프레드 문법으로 해결했습니다. 다만 console.log로 찍으면 잘 나오는데 왜 ts 오류가 생기는지 잘 모르겠습니다.
+- https://soopdop.github.io/2020/12/01/index-signatures-in-typescript/ 외 다양하게 접근하고 시도했으나 이해가 잘 되지 않습니다..",Jisu Park,zih2o,[코치] 김혜진,yejinh,No,No,,2022-12-22 08:44:32,2022-12-23 04:01:11,2022-12-23 04:01:11,,,"FE,🙋오피스아워",0,0
+22,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/22,중복 확인과 가입 요청 사이에 다른 사람이 해당 계정으로 가입하는 상황에 대한 질문,Open,"'## `context`
+21일에 이메일과 유저네임 중복확인하는 api가 필요할 것 같다는 요청이 있어서 해당 api를 작업했습니다.
+
+그런데 **그 사이에 다른 유저가 회원가입 요청을 완료해 이미 중복확인을 했음에도 회원가입을 할 수 없는 상황**에 대해 생각하게 되었고, 이메일과 유저네임을 중복확인하는 로직을 통과해야 회원가입 요청이 보내지는 로직을 추가하는 것은 어떨지 말씀드렸습니다.
+물론 발생하기 드문 상황이긴 하지만, 만약 그렇다면 중복확인을 한 의미가 없어진다고 생각되어 메서드를 수정하지 않았습니다.
+
+그때 코치님이 서버의 3가지 상태 중 하나로 처리하면 될 것 같다는 조언을 주셨고, 그것에 대해 생각해본 내용을 말씀드립니다.
+
+---
+
+세션을 가지고 세션 id를 이용해 회원가입하려는 요청의 세션 Id와 유저네임을 서버에 저장한 뒤 세션이 종료되면 사라지게 한다(?)
+
+- 이 때 세션id와 유저네임을 서버에 저장해야 하는지에 대한 의문이 생깁니다(아마 말씀하신 레디스 같은 인메모리 디비로 빠르게 저장하고 빠르게 삭제하면 될 것 같은데, 여기서부턴 오버엔지니어링인 것 같습니다. 하지만 만약의 만약을 계속 상정하면서 여러 옵션들을 고려해보았습니다.)
+- 세션의 id와 유저네임이 서버 메모리에 저장되면 그때부터 동시에 회원가입하는 유저의 수를 고려해야 할 것 같습니다. 왜냐면 하나의 VM에서 애플리케이션 역할을 하는 것 이외의 역할이 요구되기 때문이고, 현재 VM의 메모리가 35%정도 점유당한 상태이기 때문입니다.)
+- 만약 세션의 id가 123인 유저가 회원가입 요청을 하지 않은 상태로 중복확인만 했다고 가정한다면, 세션의 id 123과 닉네임 '펭귄'이 서버 메모리에 저장이 되고 회원가입은 완료되지 않아 실제 123유저가 그 닉네임을 DB에 점유하지 않은 상태입니다. 하지만 세션을 통해 임시로 점유해놓은 상태라고 할 수 있지만, 그 사이에 다른 유저(세션의 id가 124)가 동일한 닉네임인 '펭귄'으로 중복확인을 하였을 때 중복된 닉네임이라는 응답이 오고, 회원가입 요청을 할때는 **실제 DB에는 펭귄이 저장되어 있지 않아 유일하지만** 펭귄을 포기하고 펭귄2로 회원가입을 해야 완료됩니다.
+나중에 세션id가 123인 유저가 124가 회원가입한 이후에 회원가입하면 123유저는 자신이 중복확인을 해 확인한 내용을 토대로(중복이 아니라는 응답) 일관성 있는 회원가입을 할 수 있을 것 같습니다.
+- 하지만 세션 123인 유저가 중복확인만 하고 잠시 자리를 비우는 상황이 되어 회원가입을 결국엔 안했을 경우, 세션id 124 유저가 억울해지는 일이 발생할 것 같습니다. 이걸 두 가지 분기로 나눌 수 있을 것 같은데, 하나는 브라우저를 종료해 세션을 종료하는 경우. 또 하나는 나가진 않지만 브라우저를 켜놓은 상태로 오랫동안 두어 세션이 저절로 종료되는 경우입니다.
+이 때 고려해야 할 점은 브라우저를 종료해 세션을 종료하는 경우 빠르게 세션의 id와 서버 메모리에 임시점유한 닉네임을 삭제하는 것이 관건이겠고, 세션이 저절로 종료되는 경우 그 시간동안 과연 세션 id와 닉네임을 계속 저장해야하는지가 관건일 것 같습니다.
+
+해당 아이디어인 `세션의 id를 저장`하기 위해서는 
+https://www.npmjs.com/package/express-session
+Express의 경우 다음의 라이브러리가 필요하다고 하는데 아직 자세한 사용법은 아직 알아보지 못한 상태입니다. 
+
+
+번외) 그 외 생각한 해결 방법
+
+유저네임의 unique 제약을 풀면 됩니다. 과연 이 뉴스레터 구독 서비스에 유저이름이 고유한 게 반드시 필요한지 고려해보았을 때 특정한 도메인(게임, 커뮤니티 등)에서 레어닉이 있고 레어닉을 가지고 거래하는 서비스라면 고유해야 합니다. 
+하지만 반대로 ""관리자""라는 닉네임으로 관리자를 사칭하는 경우가 발생할 수 있습니다.(...) 그렇다면 클라이언트 단에서 유저의 롤을 표시해주는 장치(예시 : 뱃지) 있어야 하므로 fail입니다.",서윤지,adeliepenguin,[코치] 유관식,ksyoo,Yes,No,,2022-12-23 11:54:16,2022-12-23 11:54:16,,,,"BE,🙋오피스아워",0,0
+23,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/23,221228 - FE - 오피스아워,Open,"'
+
+- 이슈에 대한 자세한 설명 :
+
+## <개발 이슈>
+
+### 1. 개발 시 이슈가 무엇이었는지 예상 동작과 현재 동작에 대해 자세히 기입해주세요.
+1. useInfiniteQuery를 사용해서 useMutation 정의시 타입 지정에 어려움이 있습니다.
+
+```const addLike = useMutation({
+    mutationFn: async (newPost: IPost) => {
+      await api.get(`/post/like/${newPost._id}`);
+    },
+    onMutate: async (newPost: IPost) => {
+      await queryClient.cancelQueries({ queryKey: ['posts', catId] });
+      const previousData = queryClient.getQueryData(['posts', catId]);
+      queryClient.setQueryData<InfiniteData<IPage>>(['posts', catId], (oldData) => ({
+        ...oldData!,
+        pages: oldData!.pages.map((page) => ({
+          ...page,
+          result: page.result.map((post) => (post._id === newPost._id ? newPost : post)),
+        })),
+      }));
+      return { previousData };
+    },
+    onError: (err, newPost, context) => {
+      queryClient.setQueryData(['posts'], context?.previousData);
+    },
+    onSettled: () => {
+      queryClient.invalidateQueries({ queryKey: ['todos', catId] });
+    },
+  });
+```
+
+2. 클라이언트에 보여지는 url이 mongoDb 데이터 _id를 포함하고 있어도 보안상으로 문제가 없는지 궁금합니다.
+
+3. vercel을 이용해서 배포했는데, preview 와 product가 어떤 차이가 있는지 궁금합니다.
+
+4. 카테고리 페이지에서 로그인을 한 상태일때만 구독 api가 불러와지고 로그인이 안된 상태일땐 안불러와지도록 선택적으로 react query가 사용되도록 하고싶은데 로그인안된상태일때도 계속 불러와져서 콘솔창에 403에러로 계속 나타나집니다. enabled 속성을 넣어도 작동이 되지 않아 어떻게 해결해야하는지 궁금합니다.
+![Screen_Shot_2022-12-28_at_4.08.25_PM](/uploads/d375450f015d1e036cdfb64cf5a107bb/Screen_Shot_2022-12-28_at_4.08.25_PM.png)![Screen_Shot_2022-12-28_at_4.09.29_PM](/uploads/f6709cbd9601f14e404fdaf78cab48b4/Screen_Shot_2022-12-28_at_4.09.29_PM.png)",Jisu Park,zih2o,[코치] 김혜진,yejinh,No,No,,2022-12-28 06:57:24,2022-12-28 07:09:38,,,,"FE,🙋오피스아워",0,0
+24,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/24,3주차 백엔드 코드리뷰,Open,"'@adeliepenguin 
+@SonHyeongSeok 
+     
+
+
+1. 카테고리 삭제        
+지난 코드리뷰 간 카테고리 삭제시 같이 반응해야하는 모델이 있음을 언급한 바 있습니다.     
+이와 관련하여, 두가지 방법을 제시해드렸었고, 그 중 하나의 함수에 수행되어야하는 로직을 반영하는 방법으로 진행하셨네요.       
+
+이제는 subscribe 모델도 category 삭제시 반응해야하는 모델이 되었습니다.      
+이러한 상황일 때 deleteCategory로직이 비대해질 수 있습니다.       
+
+Event 를 활용한 패턴을 적용해보기 좋겠네요.      
+Event 를 pub/sub 하기위한 도구로, NodeJS 내장 모듈 EventEmitter도 활용가능하지만, 이제 시간이 충분하니,   
+Kafka와 같은 이벤트 플랫폼을 같이 활용해보세요.
+
+2. 트랜잭션     
+트랜잭션 처리는 정규화된 데이터를 다룰 때 반드시 같이 고려되어야하는 요소입니다.    
+반드시 적용해보고, 이때 MongoDB와 MySQL이 트랜잭션을 처리하는 방식의 차이점도 같이 학습해보세요.       
+더 나아가, 최근에는 MSA가 대두되며, 서비스 간 트랜잭션 개념도 필요한 경우가 있습니다. 이때는 DB가 다르니 트랜잭션을 DB에 위임할 수 없겠죠.     
+이를 위해 2 phase commit, Saga 패턴 등 다양한 방법론도 나오는 상황입니다.    
+이때 Event에 대한 개념은 필연적입니다.  (Event에 대해서도 반드시 이해해야합니다.)     
+
+3. DI / IoC container     
+반드시 짚고 넘어갈 개념입니다.     
+Inversify와 같은 모듈을 사용해보시거나, nestjs 를 통해 반드시 경험해보세요.       
+
+
+지난 3주간 수고 많으셨습니다.",[코치] 유관식,ksyoo,"","",No,No,,2023-01-01 09:59:12,2023-01-01 10:48:19,,,,,0,0
+25,https://kdt-gitlab.elice.io/sw_track/class_03/web_project_2/team2/do-green/-/issues/25,3주차 FE 코드리뷰,Open,"'요청주신 mr이 따로 없어서 전체적인 리뷰 드립니다. 
+
+
+- 커스텀 훅으로 분리한 것은 좋은데 query용 훅인지 store용 훅인지 구분할 필요가 있어 보입니다. 훅 접미사로 `-Store` `-Query` `-Mutation` 등을 붙여도 될 것 같네요.
+
+- pages내의 컴포넌트와 components내의 컴포넌트의 차이가 불분명합니다. 어느 곳에서는 skeleton까지 page 컴포넌트가 들고있기도 하고 어느 곳에서는 query 데이터를 가지고 있기도 해서 page가 어디까지 관여할 것인지 기준을 세워 일관성 맞춰주시기 바랍니다. 
+
+- 상수로 관리할 수 있는 부분들은 constants 파일로 분리해주세요. util 파일 내에 있는 정규식도 util보다는 constant 성격에 더 적합합니다.
+
+- 디렉토리 구조에 정답은 없지만.. src/ 하위의 utils 파일에는 범용적으로 사용 가능한 util 함수들(다른 프로젝트를 하더라도 네이밍이나 로직 변경 없이 그대로 사용할 수 있다고 생각하시면 됩니다)을 넣고 도메인이 필요한 것들은 utils/ 하위로 폴더를 만들어 넣어두시거나 사용하는 컴포넌트 폴더 내에 두셔도 괜찮습니다. 
+
+- tailwind 스타일링의 위치가 산발적으로 되어있는데 일관성 맞춰주세요. 추후에는 css in js(emotion, styled-component)와 함께 써보셔도 좋을 것 같습니다. 
+
+- components/common 내에 공용 컴포넌트 분리하신 것 좋습니다. 공용 컴포넌트 분리는 항상 고민해야하는 부분이니 추후에도 많은 도움이 되실거라 생각합니다. 
+
+
+앞서 리뷰 남겨드렸던 것들도 다시 한번 꼼꼼히 살피시고 이해되지 않는 코드, 잘 모르는 개념들은 꼭 짚어보고 넘어가세요. 그래야 본인 것이 됩니다!
+
+한 해 마지막의 마지막까지 프로젝트와 발표 마무리 하시느라 정말 수고 많으셨어요. 어느 곳보다 욕심 많았던 팀이라 아쉬움도 크게 남을 것 같은데 앞으로 마지막 오피스아워에서 말씀 드렸던 바와 같이 이제 시작이고 갈 길이 머니.. 지치지 마시고 취업까지 화이팅하시길 바랄게요. 새해 복 많이 받으세요 :)",[코치] 김혜진,yejinh,"","",No,No,,2023-01-01 10:35:20,2023-01-01 10:35:20,,,,FE,0,0
